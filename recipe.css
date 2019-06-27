@@ -35,11 +35,9 @@
     text-decoration: none;
   }  
   pre {
-    text-align: right;
     display: block;
     font-family: monospace;
     white-space: pre;
-    margin: 1em 0;
   }
   .comment{
     font-style: italic;
