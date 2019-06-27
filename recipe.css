@@ -7,17 +7,18 @@
     font-family: Georgia, Garamond, sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1 {
     color: #A4A400;
     background-color: #F0F0F0;
-    font-family: 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    font-family: 'Lucida Sans Unicode', Helvetica, sans-serif;
     font-size: 18pt;
     font-style: normal;
     text-align: left;
     text-decoration: underline;
+    letter-spacing: 7px;
   }
 
-  div > h3 {
+  div > h1 {
     text-align: center;
     font-size: 22pt;
     font-size: 22pt;
@@ -28,11 +29,11 @@
   }
   
   a:link {
-    text-decoration: none;
+    text-decoration: underline;
   }
   
   a:visited {
-    text-decoration: none;
+    text-decoration: underline;
   }  
   pre {
     display: block;
@@ -45,7 +46,10 @@
     margin: 2em 2em 2em 4em ;
     display: block;
   }
-  ul.icon{  
+  ul.icon {  
     list-style-image: url(images/pie_icon.gif);
-}
+  }
+  #copyright {
+    text-align:right;
+  }
   
