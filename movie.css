@@ -11,22 +11,82 @@ h1 {
   background-image: url("images/bannerbg.png");
   text-align: center;
 }
-.rotten{
-  width: 550px;
-  border-width: 4px;
-  border-color: grey;
-  border-radius: 20px;
-  vertical-align: top;
+.rotten {
   background-image: url("images/rbg.png");
+  font-size: 48pt;
+  font-weight: bold;
+  color: red;
+  border-top-left-radius: 20px;
+  column-span: all;
 
+}
+
+.rotten img{
+  border-top-left-radius: 20px;
 }
 
 .container {
   width: 800px;
-  border-radius: 15px;
-  border-width: 4px;
-  border-style: solid;
-  border-color: rgba(110, 108, 107, 0.26);
+  border-radius: 20px;
+  border: 4px solid grey;
   margin:auto;
+  overflow: auto;
 }
+
+
+@media screen and (min-width:600px) {
+  nav {
+    float: right;
+    width: 250px;
+    height: auto;
+    background-color: #A2B964;
+    border-top-right-radius: 20px;
+    font-size: 8pt;
+    font-family: Arial, sans-serif;
+
+  }
+  section {
+    margin-right: 31%;
+    width:550px;
+    height: auto;
+    column-count: 2;
+  }
+
+}
+
+@media screen and (max-width:599px) {
+  nav {
+    border: 1px solid grey;
+    display: inline;
+  }
+  section {
+    border: 1px solid grey;
+    height: 100px;
+  }
+}
+
+nav img{
+  border-top-right-radius: 20px;
+}
+nav dt{
+  padding:10pt;
+  font-weight: bold;
+}
+p{
+  margin:6px;
+}
+p:nth-child(even) {
+  border: 2px solid grey;
+  font-size: 8pt;
+  font-weight: bold;
+  background-color: #E8DC9B;
+  border-radius: 10px;
+  padding:8px;
+
+}
+
+p:nth-child(even) img {
+  vertical-align: top;
+}
+
 
