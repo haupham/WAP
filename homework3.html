@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="form.css">
+<style>
+* {
+  box-sizing: border-box;
+}
+body {
+  color:#aaaaaa;
+  font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 10pt;
+}
+ 
+h3 {
+  text-align: center;
+  color:gray;
+  display: block;
+}
+.container{
+  width: 90%;
+  margin:auto;
+}
+.personal-info {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: 50px 50px;
+  grid-gap: 20px;
+  grid-column-gap: 50px;
+  width: 100%;
+  margin:auto;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: 50px 50px;
+  grid-gap: 20px;
+  grid-column-gap: 50px;
+  width: 100%;
+  margin:auto;
+}
+
+.financial-info {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-template-rows: 50px 50px;
+  grid-gap: 20px;
+  grid-column-gap: 50px;
+  width: 100%;
+  margin:auto;
+}
+
+.lbl_text{
+  width:20em;
+  display: block;
+}
+.in_text{
+  width: 20em;
+  height: 2em;
+}
+.lbl_text_md{
+  width:30em;
+  display: block;
+}
+.in_text_md{
+  width: 30em;
+  height: 2em;
+}
+.hint{
+  color:gray;
+  color:red;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: .75rem 1rem;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    background-color: #128029;
+    color: #fff;
+}
+@media only screen and (max-width:620px) {
+  /* For mobile phones: */
+   .column{
+    width:100%;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="header">
+      <img class="header" src="images/cof-logo.png" alt="CapitalOne card">
+    </div>
+    <hr>
+    <div class="container">
+        <!--Personal Info-->
+        <h3>Personal Information</h3>
+        <div class="personal-info">
+        
+          <div>
+            <label class="lbl_text">First Name</label>
+            <input class="in_text" type="text" required/>
+          </div> 
+          <div>
+              <label class="lbl_text">Last Name</label>
+              <input class="in_text" type="text" required/>
+            </div> 
+          <div>
+            <label class="lbl_text">Date of Birth</label>
+            <input class="in_text" type="date" required/>
+          </div>
+          <div>
+            <label class="lbl_text">Mother's Maiden Name</label>
+            <input class="in_text" type="text" required/>
+          </div> 
+          <div>
+              <label class="lbl_text">Social Insurance Number (Optional)</label>
+              <input class="in_text" type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+            </div>
+            <div>
+              <label class="lbl_text">How did you learn about this card? (Optional)</label>
+              <select class="in_text">
+                  <option>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+            </div> 
+      </div>
+      
+      <!-- Contact info-->
+      <h3>Contact Information</h3>
+      <div class="contact-info">
+            
+              <div>
+                <label class="lbl_text_md">Home Address (No P.O Boxes)</label>
+                <input class="in_text_md" type="text"/>
+              </div> 
+              <div>
+                  <label class="lbl_text">Suite/Apt #(if Applicable)</label>
+                  <input class="in_text" type="text"/>
+                </div> 
+              <div>
+                  <label class="lbl_text_md">Email <Address></Address></label>
+                  <input class="in_text_md" type="email"/>
+              </div> 
+                
+                
+                <div>
+                    <label class="lbl_text">Primary Phone Number</label>
+                    <input class="in_text" type="number"/>
+                </div> 
+            </div>
+      </div>   
+      <!-- Financial info-->
+      <h3>Financial Information</h3>
+      <div class="financial-info">
+            <div>
+                <label class="lbl_text">Do you:(Optional)</label>
+                    <input type="radio" name="type"/>Own
+                    <input type="radio" name="type"/>Rent
+                    <input type="radio" name="type"/>Live with parents
+                    <input type="radio" name="type"/>Other
+                
+            </div>
+            <div></div>
+            
+                <div>
+                    <label class="lbl_text_md">Your Annual Income (Before Taxes)</label>
+                    <input class="in_text_md" type="text"/>
+                </div> 
+              
+                <div>
+                    <label class="lbl_text_md">Other Household Income (Before Taxes)</label>
+                    <input class="in_text_md" type="text"/>
+                </div> 
+
+              <div>
+                  <label class="lbl_text_md">Do your have a mortgage? (Optional)</label>
+                  <input type="radio" name="mortgage"/>Yes
+                  <input type="radio" name="mortgage"/>No
+                
+              </div>
+                <div>
+                  <label class="lbl_text">Monthly Rent/Mortgage (Optional)</label>
+                  <input class="in_text" type="text"/>
+                </div> 
+                <div>
+                    <label class="lbl_text">Do you have any bank accounts?</label>
+                    <select class="in_text">
+                      <option>A</option>
+                      <option>B</option>
+                      <option>C</option>
+                    </select>
+                </div> 
+                <div>
+                    <label>Would you like to use your card for cash advances? (Optional)</label>
+                    <input type="radio" name="cashback"/>Yes
+                    <input type="radio" name="cashback"/>No
+                    
+                </div> 
+                <div style="overflow: auto;">
+                    <input type="button" value="Review My Application" class="button">
+                </div>
+            </div>
+            
+      </div>  
+</body>
+</html>
