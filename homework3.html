@@ -4,13 +4,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="form.css">
 <style>
-* {
-  box-sizing: border-box;
-}
+
 body {
   color:#aaaaaa;
+  background-color: grey;
   font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  font-size: 10pt;
+  font-size: 11pt;
 }
  
 h3 {
@@ -19,59 +18,71 @@ h3 {
   display: block;
 }
 .container{
-  width: 90%;
+  background-color: #fff;
+  width: 100%;
   margin:auto;
+  padding: 5px;
 }
 .personal-info {
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 45% 45%;
   grid-template-rows: 50px 50px;
   grid-gap: 20px;
   grid-column-gap: 50px;
-  width: 100%;
+  width: 90%;
   margin:auto;
 }
 
 .contact-info {
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 45% 45%;
   grid-template-rows: 50px 50px;
   grid-gap: 20px;
   grid-column-gap: 50px;
-  width: 100%;
+  width: 90%;
   margin:auto;
 }
 
 .financial-info {
   display: grid;
-  grid-template-columns: 40% 40%;
+  grid-template-columns: 45% 45%;
   grid-template-rows: 50px 50px;
   grid-gap: 20px;
   grid-column-gap: 50px;
-  width: 100%;
+  width: 90%;
   margin:auto;
 }
 
 .lbl_text{
-  width:20em;
+  width:25em;
+  height: 1.5em;
   display: block;
 }
 .in_text{
   width: 20em;
   height: 2em;
+  display: inline-block;
 }
 .lbl_text_md{
-  width:30em;
+  width:35em;
   display: block;
 }
 .in_text_md{
   width: 30em;
   height: 2em;
 }
-.hint{
-  color:gray;
-  color:red;
-}
+.input-symbol-dollar {
+     position: relative;
+ }
+ .input-symbol-dollar input {
+     padding-left:18px;
+ }
+ .input-symbol-dollar:before {
+     position: absolute;
+     top: 0;
+     content:"$";
+     left: 5px;
+ }
 
 .button {
     display: inline-block;
@@ -89,6 +100,11 @@ h3 {
     background-color: #128029;
     color: #fff;
 }
+.footer{
+  width: 100%;
+  margin:auto;
+  text-align: center;
+}
 @media only screen and (max-width:620px) {
   /* For mobile phones: */
    .column{
@@ -96,6 +112,22 @@ h3 {
   }
 }
 </style>
+<script>
+    function validateForm(){
+     
+      var fields = document.getElementsByTagName("input");
+      for(var i = 0; i<fields.length;i++){
+        if(fields[i].hasAttribute("required") && (fields[i].value == null || fields[i].value == '' ))
+        {
+          fields[i].style.backgroundColor = "red";
+          return;
+        }  
+      }
+      alert("Passed all validation rules!!");
+      window.open("https://haupham.github.io/WAP/index.html");
+        
+}
+</script>
 </head>
 <body>
     <div class="header">
@@ -103,37 +135,48 @@ h3 {
     </div>
     <hr>
     <div class="container">
+      <form method="POST" onsubmit="return validateForm()">
         <!--Personal Info-->
         <h3>Personal Information</h3>
         <div class="personal-info">
         
           <div>
             <label class="lbl_text">First Name</label>
-            <input class="in_text" type="text" required/>
+            <input class="in_text" type="text" placeholder="First Name" required/>
           </div> 
           <div>
               <label class="lbl_text">Last Name</label>
-              <input class="in_text" type="text" required/>
+              <input class="in_text" type="text" placeholder="Last Name" required/>
             </div> 
           <div>
             <label class="lbl_text">Date of Birth</label>
-            <input class="in_text" type="date" required/>
+            <input class="in_text" type="date"  placeholder="MM/DD/YYYY" pattern="^((0|1)\d{1})(-|/)((0|1|2)\d{1}|30|31)(-|/)((19|20)\d{2})$" required/>
           </div>
           <div>
             <label class="lbl_text">Mother's Maiden Name</label>
-            <input class="in_text" type="text" required/>
+            <input class="in_text" type="text" placeholder="Mother's Maiden Name"/>
           </div> 
           <div>
               <label class="lbl_text">Social Insurance Number (Optional)</label>
-              <input class="in_text" type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"/>
+              <input class="in_text" type="text" placeholder="___-___-___" pattern="[0-9]{3}\-[0-9]{3}\-[0-9]{3}$"/>
             </div>
             <div>
               <label class="lbl_text">How did you learn about this card? (Optional)</label>
-              <select class="in_text">
-                  <option>A</option>
-                  <option>B</option>
-                  <option>C</option>
-                </select>
+              <select class="in_text" name="source" value="Select Source">
+                <option selected>Select Source</option>
+                <option value="1">Mail Offer</option>
+                <option value="2">Newspaper</option>
+                <option value="3">Facebook Ad or Video</option>
+                <option value="4">Other</option>
+                <option value="5">Email with CapitalOne Content</option>
+                <option value="6">Family or Friend</option>
+                <option value="7">Credit Cards Comparison Site</option>
+                <option value="8">Search Engine</option>
+                <option value="9">Television</option>
+                <option value="10">Magazine</option>
+                <option value="11">CapitalOne Sponsor Event</option>
+                <option value="12">Outdoor or Transit Ad</option>
+              </select>
             </div> 
       </div>
       
@@ -143,52 +186,57 @@ h3 {
             
               <div>
                 <label class="lbl_text_md">Home Address (No P.O Boxes)</label>
-                <input class="in_text_md" type="text"/>
+                <input class="in_text_md" placeholder="Home Address" type="text"/>
               </div> 
               <div>
                   <label class="lbl_text">Suite/Apt #(if Applicable)</label>
-                  <input class="in_text" type="text"/>
+                  <input class="in_text" placeholder="Suite/Apt" type="text"/>
                 </div> 
               <div>
                   <label class="lbl_text_md">Email <Address></Address></label>
-                  <input class="in_text_md" type="email"/>
+                  <input class="in_text_md" placeholder="Email" type="email" required/>
               </div> 
                 
                 
                 <div>
                     <label class="lbl_text">Primary Phone Number</label>
-                    <input class="in_text" type="number"/>
+                    <input class="in_text" type="tel" pattern="^\d{3}\d{3}\-\d{4}" placeholder="(___) ___-____"/>
                 </div> 
-            </div>
-      </div>   
+      </div>
+      
       <!-- Financial info-->
       <h3>Financial Information</h3>
       <div class="financial-info">
             <div>
                 <label class="lbl_text">Do you:(Optional)</label>
-                    <input type="radio" name="type"/>Own
-                    <input type="radio" name="type"/>Rent
-                    <input type="radio" name="type"/>Live with parents
-                    <input type="radio" name="type"/>Other
+                    <input type="radio" name="type"/> Own
+                    <input type="radio" name="type"/> Rent
+                    <input type="radio" name="type"/> Live with parents
+                    <input type="radio" name="type"/> Other
                 
             </div>
             <div></div>
             
                 <div>
                     <label class="lbl_text_md">Your Annual Income (Before Taxes)</label>
-                    <input class="in_text_md" type="text"/>
+                    <span class="input-symbol-dollar">
+                        <input class="in_text_md" type="text"/>
+                    </span>
+                    
                 </div> 
               
                 <div>
                     <label class="lbl_text_md">Other Household Income (Before Taxes)</label>
-                    <input class="in_text_md" type="text"/>
+                    <span class="input-symbol-dollar">
+                      <input class="in_text_md" type="text"/>
+                    </span>
                 </div> 
 
               <div>
                   <label class="lbl_text_md">Do your have a mortgage? (Optional)</label>
-                  <input type="radio" name="mortgage"/>Yes
-                  <input type="radio" name="mortgage"/>No
-                
+                  <input type="radio" name="mortgage" value="Y"/> Yes
+                  <input type="radio" name="mortgage" value="N"/> No
+                 
               </div>
                 <div>
                   <label class="lbl_text">Monthly Rent/Mortgage (Optional)</label>
@@ -196,23 +244,27 @@ h3 {
                 </div> 
                 <div>
                     <label class="lbl_text">Do you have any bank accounts?</label>
-                    <select class="in_text">
-                      <option>A</option>
-                      <option>B</option>
-                      <option>C</option>
-                    </select>
-                </div> 
-                <div>
-                    <label>Would you like to use your card for cash advances? (Optional)</label>
-                    <input type="radio" name="cashback"/>Yes
-                    <input type="radio" name="cashback"/>No
+                    <select class="in_text" name="bank-type">
+                      <option selected>Select Type</option>
+                      <option value="1">Checquing and Savings</option>
+                      <option value="2">Checquing Only</option>
+                      <option value="3">Savings Only</option>
+                       <option value="4">Neither</option>
+                  </select>
                     
                 </div> 
-                <div style="overflow: auto;">
-                    <input type="button" value="Review My Application" class="button">
-                </div>
+                <div>
+                    <label class="lbl_text_md">Would you like to use your card for cash advances? (Optional)</label>
+                    <input type="radio" name="cashback" value="Y"/> Yes
+                    <input type="radio" name="cashback" value="N"/> No
+                    
+                </div> 
             </div>
-            
+            <hr>
+            <div class="footer">
+              <input type="submit" value="Review My Application" class="button" >
+            </div>
+          </form>
       </div>  
 </body>
 </html>
