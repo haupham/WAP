@@ -118,3 +118,31 @@ p{
   right: 0px;
   opacity: 0.5;
 }
+#adBanner{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+}
+#popup{
+  position: absolute;
+  top: 150px; 
+  left: 375px;
+}
+#popup img{
+  width: 400px;
+  height: auto;
+}
+.button{
+  width:200px;
+  height: 30px;
+  text-align: center;
+  position: absolute;
+  bottom:10px;
+  left:100px;
+  border-radius: 20px;
+  box-shadow: 3px 3px #888888;
+  background-color: lightskyblue;
+  opacity: 0.75;
+  font-size: 14pt;
+}

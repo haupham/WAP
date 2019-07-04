@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 	<head>
 		<title>TMNT - Rancid Tomatoes</title>
 		<link rel="shortcut icon" href="images/rotten.gif" />
 		<link href="movie.css" type="text/css" rel="stylesheet" />
 	</head>
+	
+	<script type="text/javascript">
+		function PopUp(hideOrshow) {
+		if (hideOrshow == 'hide') 
+			document.getElementById('adBanner').style.display = "none";
+		else 
+			document.getElementById('adBanner').removeAttribute('style');
+	}
+	window.onload = function () {
+		PopUp('show');
+	}
+	</script>
 
 	<body>
 
@@ -62,7 +74,7 @@
 			</dd>
 		</dl>
 		</nav>
-		<section>	
+		<section>
 		<div class="rotten">
 			<img src="images/rottenbig.png" alt="Rotten" />
 			<span class="rottenText">33%</span>
@@ -172,14 +184,17 @@
 		<p>(1-10) of 88</p>
 	</div>
 	</div>
-	
+	<!--Popup dialog-->
+	<div id="adBanner" style="display:none;" >
+		<div id="popup">
+			<img src="images/move_popcorn.jpg" alt="Popcorn Movie">
+			<input class="button" type="button" value="Click Me" onclick="PopUp('hide');"/>
+		</div>
+	</div>
+
 		<div class="validation">
-		<p>
-                    <a href="https://validator.w3.org/check/referer">
-                        <img src="http://mumstudents.org/cs472/images/w3c-html.png" alt="Validate" /> </a><br>
-                    <a href="https://jigsaw.w3.org/css-validator/check/referer">
-                        <img src="https://jigsaw.w3.org/css-validator/images/vcss" alt="Validate" /> </a>
-                </p>
+			<a href="http://validator.w3.org/check/referer"><img src="w3c-html.png" alt="Valid HTML5" /></a> <br />
+			<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="w3c-css.png" alt="Valid CSS" /></a>
 		</div>
 	</body>
 </html>
