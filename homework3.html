@@ -8,10 +8,10 @@
      
       var fields = document.getElementsByTagName("input");
       for(var i = 0; i<fields.length;i++){
-        if(fields[i].hasAttribute("required") && (fields[i].value == null || fields[i].value == '' ))
+        if(fields[i].value.match(fields[i].pattern) > 0)
         {
           fields[i].style.backgroundColor = "red";
-          return;
+          return false;
         }  
       }
       alert("Passed all validation rules!!");

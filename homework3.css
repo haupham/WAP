@@ -93,6 +93,9 @@ h3 {
     background-color: #128029;
     color: #fff;
 }
+.header{
+  text-align: center;
+}
 .footer{
   width: 100%;
   margin:auto;
