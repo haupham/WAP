@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JS - ModuleLab : Factory Module Pattern</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+      .container{
+          width: 300px;
+          margin:auto;
+          padding: 20px;
+          font-size: 12pt;
+      }
+      .control{
+          text-align: left;
+          margin:10px;
+      }
+      
+  </style>
+  <script>
+      var accountInfoList = [];
+      var factory = new Factory();
+      document.getElementById("balance").focus = true;
+      function Factory() {
+        
+        this.createAccount = function (type, balance) {
+        
+        var account;
+        if (type === "saving") {
+            account = new Saving();
+        } else if (type === "checking") {
+            account = new Checking();
+        } else if (type === "business") {
+            account = new Business();
+        } 
+
+        account.type = type;
+        account.balance = balance;
+        
+        account.print = function () {
+            return "Account name:  " + this.type + " \t\t Balance:  " + this.balance;
+        }
+ 
+        return account;
+    }
+}
+ 
+var Saving = function () {
+    this.type = "saving";
+};
+ 
+var Checking = function () {
+    this.type = "checking";
+};
+ 
+var Business = function () {
+    this.type = "business";
+};
+
+ 
+function showList() {
+    
+    var reStr = "";
+    for (var i = 0, len = accountInfoList.length; i < len; i++) {
+
+        reStr += accountInfoList[i].print() + "\n";
+    }
+    
+    document.getElementById("textA").value = reStr;
+    document.getElementById("balance").focus
+   
+}
+
+//run();    
+function addAcc(){
+    var accType = document.getElementById("type").value;
+    var balance = document.getElementById("balance").value;
+    alert(accType +":"+ balance);
+    accountInfoList.push(factory.createAccount(accType,balance));
+    console.log(accountInfoList);
+    showList();
+}
+
+
+  </script>
+</head>
+<body>
+    <div class="container">
+     <h3>JS Assignment</h3>   
+      <form>
+          <fieldset>
+              <legend>Bank Account</legend>
+              <div>
+                <label>Account Name</label>
+                <select id="type">
+                    <option value="saving">Saving</option>
+                    <option value="checking">Checking</option>
+                    <option value="business">Business</option>
+                </select>
+              </div>
+              <div>
+                <label>Balance</label>
+                <input type="number" value="" placeholder="0" name="balance" id="balance"/>
+              </div>
+              <div class="control"><input type="button" value="Create New Account" onclick="addAcc();" name="create"/></div>
+              <div>
+                   <textarea id="textA" cols="100" rows="10">
+                   </textarea> 
+              </div>
+          </fieldset>
+      </form>
+    
+    </div>
+    
+</body>
+</html>
