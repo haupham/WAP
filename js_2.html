@@ -10,11 +10,13 @@
           width: 300px;
           margin:auto;
           padding: 20px;
-          font-size: 12pt;
+          font-size: 14pt;
+          position: relative;
       }
       .control{
           text-align: left;
           margin:10px;
+          overflow: auto;
       }
       
   </style>
@@ -39,7 +41,7 @@
         account.balance = balance;
         
         account.print = function () {
-            return "Account name:  " + this.type + " \t\t\t Balance:  " + this.balance;
+            return "Account name:  " + this.type + " \t\t Balance:  " + this.balance;
         }
  
         return account;
@@ -100,12 +102,11 @@ function addAcc(){
               </div>
               <div>
                 <label>Balance</label>
-                <input type="number" value="" placeholder="0" name="balance" id="balance" required/>
+                <input type="number" placeholder="0" name="balance" id="balance" required/>
               </div>
               <div class="control"><input type="button" value="Create New Account" onclick="addAcc();" name="create"/></div>
               <div>
-                   <textarea id="textA" cols="100" rows="10">
-                   </textarea> 
+                   <textarea id="textA" cols="60" rows="20"></textarea> 
               </div>
           </fieldset>
       </form>
