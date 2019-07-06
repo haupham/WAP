@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>JS - Inheritance</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script>
+   
+    //JS Inheritance
+    var createBicyclePrototye = (function() {
+      var speed = 0;  
+    var speedUp = function(s) {speed+=s;};
+    var applyBrake = function(val) {speed -= val;};
+    return {  speedUp: speedUp, 
+              applyBrake: applyBrake,
+              value: function(){ return speed;} };
+    })();
+    
+    var bicycle = createBicyclePrototye;
+    bicycle.speedUp(1);
+    bicycle.speedUp(2);
+    bicycle.speedUp(1);
+    bicycle.speedUp(4);
+    console.log(bicycle.value());
+    bicycle.applyBrake(1);
+    bicycle.applyBrake(3);
+    console.log(bicycle.value());
+
+    var createMountainBikeProtoype = Object.create(createBicyclePrototye);
+    createMountainBikeProtoype.gear = 1;
+    createMountainBikeProtoype.setGear = function(val){ gear = val;};
+    console.log(createMountainBikeProtoype);
+    var mountainBike = createMountainBikeProtoype;
+    mountainBike.setGear(10);
+    console.log(mountainBike.gear);
+    
+    
+    var bicyclePrototype = Object.create(createBicyclePrototye);
+    console.log(bicyclePrototype);
+
+  </script>
+</head>
+<body>
+    <div>
+      <ol>
+        <li><strong>Base on code given</strong>
+            <p>
+                <pre>
+                    let module = (function(){
+                      x=10;
+                      let outer1="outer1";
+                      function f1(arg1, arg2){
+                  let func1 = function(){ return arg2;}; }
+                      return outer1;
+                  })();
+                  alert(module);
+                  alert(x);      
+                </pre>
+            </p>
+            <ul style="list-style-type: lower-alpha;">
+                <li>How many global variables we have? <em>One (x=10)</em></strong></li>
+                <li>Are there any closures in the code? <em>Yes (func1)</em></strong></li>
+                <li>What will be the outputs of the code? <em>(module='outer1', x=10)</em></strong></li>
+                <li>How will you call function f1 from outside the module? <em>Need to return function f1 instead of outer1</em></strong></li>
+            </ul>
+        </li>
+        <li><strong>What will the print out in console after following code is executed?</strong>
+            <p>
+            <pre>
+                (function(x,y){
+                  "use strict"; 
+                  console.log(this);
+                  console.log(x,y);
+                  const obj = {x:2, foo:function(){console.log(this.x)}};
+                  obj.foo();
+                  obj.bar = () =>console.log(this.x);
+                  obj.bar();
+                  })(5,7);
+                </pre>
+            </p>
+            <p>Console with <em>"use strict"</em>
+                <pre>
+                    5 7 
+                    2 
+                    Uncaught TypeError: Cannot read property 'x' of undefined at Object.obj.bar
+                </pre>
+            </p>
+            <p>Console without <del>"use strict"</del>
+                <pre>
+                    5 7 
+                    2 
+                    undefined
+                </pre>
+            </p>
+        </li>
+        <li><strong>Homework:: BicyclePrototye</strong>
+            <em>in progress</em>
+        </li>
+      </ol>
+      
+
+
+    </div>
+    
+</body>
+</html>
