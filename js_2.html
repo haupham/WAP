@@ -21,7 +21,7 @@
   <script>
       var accountInfoList = [];
       var factory = new Factory();
-      document.getElementById("balance").focus = true;
+      document.getElementById("balance")
       function Factory() {
         
         this.createAccount = function (type, balance) {
@@ -76,7 +76,6 @@ function showList() {
 function addAcc(){
     var accType = document.getElementById("type").value;
     var balance = document.getElementById("balance").value;
-    alert(accType +":"+ balance);
     accountInfoList.push(factory.createAccount(accType,balance));
     console.log(accountInfoList);
     showList();
@@ -101,7 +100,7 @@ function addAcc(){
               </div>
               <div>
                 <label>Balance</label>
-                <input type="number" value="" placeholder="0" name="balance" id="balance"/>
+                <input type="number" value="" placeholder="0" name="balance" id="balance" required/>
               </div>
               <div class="control"><input type="button" value="Create New Account" onclick="addAcc();" name="create"/></div>
               <div>
