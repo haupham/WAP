@@ -21,7 +21,7 @@
   <script>
       var accountInfoList = [];
       var factory = new Factory();
-      document.getElementById("balance")
+      
       function Factory() {
         
         this.createAccount = function (type, balance) {
@@ -39,7 +39,7 @@
         account.balance = balance;
         
         account.print = function () {
-            return "Account name:  " + this.type + " \t\t Balance:  " + this.balance;
+            return "Account name:  " + this.type + " \t\t\t Balance:  " + this.balance;
         }
  
         return account;
@@ -68,7 +68,7 @@ function showList() {
     }
     
     document.getElementById("textA").value = reStr;
-    document.getElementById("balance").focus
+    
    
 }
 
