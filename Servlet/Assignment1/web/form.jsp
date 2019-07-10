@@ -13,9 +13,10 @@
         .container {
             width: 550px;
             margin: auto;
+            background-color: lightgray;
         }
 
-        .container > h3 {
+        h3 {
             text-align: center;
         }
 
@@ -32,14 +33,15 @@
 
         .button {
             width: 250px;
+            heigh:50px;
+            padding:5px;
             background-color: lightseagreen;
         }
     </style>
 </head>
 <body>
-
+<h3>Servlet Assignment 1</h3>
 <div class="container">
-    <h3>Servlet Assignment 1</h3>
     <form action="support" method="POST">
         <fieldset class="fldset">
             <legend>Servlet Form</legend>

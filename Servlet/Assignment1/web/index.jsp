@@ -14,8 +14,16 @@
               width:550px;
               margin:auto;
           }
-          .container > h3 {
+          .container > div{
+              width:200px;
+              margin:auto;
+              padding:10px;
+              border:1px solid lightblue;
+              background-color: aquamarine;
               text-align: center;
+          }
+          a {
+              text-decoration: none;
           }
 
       </style>
@@ -23,7 +31,9 @@
   <body>
 
         <div class="container">
-            <a href="support">Submit your request</a>
+            <div>
+                <a href="support"> >> Submit your request << </a>
+            </div>
         </div>
   </body>
 </html>

@@ -13,14 +13,16 @@
           .container{
               width:550px;
               margin:auto;
+              background-color: lightgray;
           }
-          .container > h3 {
+          h3 {
               text-align: center;
           }
 
           .reply{
               text-align: justify;
               font-style: italic;
+              padding: 5px;
           }
 
           .column {
@@ -34,11 +36,8 @@
       </style>
   </head>
   <body>
-
+        <h3>Servlet Assignment Response</h3>
         <div class="container">
-            <h3>Servlet Assignment Response</h3>
-
-
                 <fieldset>
                     <legend>Request Information</legend>
                 <div class="column"><lable>Name:</lable></div>
