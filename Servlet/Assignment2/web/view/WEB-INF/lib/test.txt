@@ -1,1 +1,1 @@
-
+copy jstl-1.2.jar to lib folder.
