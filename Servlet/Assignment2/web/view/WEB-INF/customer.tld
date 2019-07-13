@@ -1,0 +1,42 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.2</jsp-version>
+    <short-name>My-Custom-Tags</short-name>
+    <uri>http://cs.mum.edu</uri>
+    <tag>
+        <name>tag1</name>
+        <tag-class>Controller.MyTag</tag-class>
+        <body-content>empty</body-content>
+    </tag>
+    <tag>
+        <name>tag2</name>
+        <tag-class>Controller.MyTag2</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <tag>
+        <name>tag3</name>
+        <tag-class>Controller.MyTag3</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>message</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>Generates a label</description>
+        <name>label</name>
+        <tag-class>Controller.MyTag4</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>foreColor</name>
+            <required>false</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>text</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+</taglib>
