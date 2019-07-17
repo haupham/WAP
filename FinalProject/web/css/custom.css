@@ -1,0 +1,85 @@
+body {
+    font: 100%/1 'Roboto', serif;
+    background: #fafafa;
+    color: #333;
+    border-top: 0.5em solid #cc8500;
+}
+
+.container {
+    width: 550px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 20px;
+    font-size: 3.5em;
+    overflow: hidden;
+    padding-left: 85px;
+    min-height: 82px;
+    line-height: 2;
+    background: url(../images/mum_logo.png) no-repeat;
+    background-size: 80px 80px;
+    color: #900;
+}
+
+.column {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: auto;
+}
+
+.clear {
+    clear: both;
+    text-align: center;
+}
+
+.btn {
+    width: 250px;
+    heigh:50px;
+    padding:5px;
+    background: #cc1400;
+    color: #fff;
+    font: 1em 'PT Serif', serif;
+    padding: 0.3em 1em;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid #a00;
+}
+/* Style the tab */
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
