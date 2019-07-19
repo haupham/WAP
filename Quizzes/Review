@@ -1,0 +1,5 @@
+
+Review Quize 8:
+1. d: delete propertity
+- Base: will affect to derived object till we have explicit assigment.
+- derived object if we have default value from base it will be lot accessable again.
